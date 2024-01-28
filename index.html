@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<link rel="icon" type="image/x-icon" href="webicon.ico">
+	<title>Online CV - Kaveesha Narasinha</title>
+	<style>
+		body{
+			z-index: -1;
+			font-family: Arial;
+			background-image: linear-gradient( rgba(0,0,0,0.75), rgba(0,0,0,0.75)),url('background.png');
+			background-size:cover;
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			font-family: Bahnschrift light;
+			background-attachment: fixed;
+			overflow-y: hidden;
+			max-zoom: 100%;
+			min-zoom: 100%;
+		}
+		.box{
+			position: absolute;
+			background-color: rgba(0, 0, 0, 0.748);
+			width: 100%;
+			height: 100%;
+			margin: 0%;
+			padding: 0;
+			left: 0%;
+			top: 0%;
+			bottom: 0%;
+			right: 0%;
+			visibility: hidden;
+			z-index: 1;
+			animation: fadin 4s;
+		}
+		.hello{
+			text-align: center;
+			font-size: 20px;
+			font-weight: bold;
+		}
+		.name{
+			text-align: center;
+			font-size: 3.5vw;
+			line-height: 100%;
+			
+
+		}
+		.lilintro{
+			text-align: center;
+			font-size: 1.5vw;
+		}
+		.part1{
+			position: absolute;
+			color: whitesmoke;
+		  	top: 60%;
+		  	left: 50%;
+		  	transform: translate(-50%, -50%);
+			line-height: 1%;
+		}
+		.listone{
+			margin-left: 23%;
+			margin-right: auto;
+		}
+		@media only screen and (max-width: 640px) {
+			div.listone {
+				width: 33%;
+				margin-left: 30%;
+				margin-right: auto;
+			}
+			div.dp{
+				top: 41%; 
+			}
+			div.button{
+				margin-left: 75%;
+			}
+		}
+		@media only screen and (max-width: 720px) {
+			div.listone {
+				width: 33%;
+				margin-left: 34%;
+				margin-right: auto;
+			}
+			div.dp{
+				top: 42%;
+			}
+			div.dpabt{
+				margin-left: 14vw;
+			}
+			div.button{
+				margin-left: 60%;
+			}
+		}
+		.button{
+			background-color: transparent;
+			border: 3px solid rgb(255, 255, 255);
+			color: whitesmoke;
+			padding: 4px;
+			border-radius: 15px;
+			width: 120px;
+			margin-top: 6%;
+			font-weight: bolder;
+			cursor: pointer;
+		}
+		.button:hover{
+			background-color: rgb(255, 255, 255);
+			color: rgb(0, 0, 0);
+			transition-duration: 1s;
+		}
+		.buttonc{
+			background-color: transparent;
+			border: 3px solid rgb(0, 0, 0);
+			color: rgb(0, 0, 0);
+			padding: 4px;
+			border-radius: 15px;
+			width: 120px;
+			margin-top: 6%;
+			font-weight: bolder;
+			cursor: pointer;
+		}
+		.buttonc:hover{
+			background-color: rgb(0, 0, 0);
+			color: rgb(255, 255, 255);
+			transition-duration: 1s;
+		}
+		#active{
+			background-color: rgb(255, 255, 255);
+			color: black
+		}
+		#cancel{
+			margin-left: 80%;
+		}
+		.dp{
+			position: absolute;
+			pointer-events: none;
+		  top: 32%;
+		  left: 50%;
+		  transform: translate(-50%, -50%);
+		}
+		.dpabt{
+			top: 20%;
+			pointer-events: none;
+		  margin-left: 40%;
+		}
+		.code{
+			border: 3px solid black;
+			border-radius: 15px;
+			background-color: transparent;
+			width: 9vw;
+			overflow: hidden;
+			text-align: center;
+
+		}
+		.codei{
+			border: 3px solid black;
+			border-radius: 15px;
+			background-color: transparent;
+			width: 100px;
+			overflow: hidden;
+			text-align: center;
+			margin-left: 68%;
+			margin-right: auto;
+			font-weight: bolder;
+
+		}
+		.copyb{
+			font-weight: bold;
+			color: azure;
+			border: 3px solid rgb(0, 0, 0);
+			background-color: rgb(0, 0, 0);
+			padding: 6px;
+			border-radius: 15px;
+			text-decoration: double;
+			left:10px;
+			right: auto;
+			cursor: pointer;
+		}
+		.copyb:hover{
+			background-color: transparent;
+			color: rgb(0, 0, 0);
+			transition: 1s;
+		}
+		.aresult{
+			text-align: left;
+			width: 500px;
+			margin-left: 5%;
+			margin-right: auto;
+		}
+		.edul{
+			background-attachment: fixed;
+			position: absolute;
+			color: rgb(0, 0, 0);
+			background-color: rgb(240, 248, 255);
+			padding: 50px;
+			border-radius: 15px;
+			border: 4px solid aliceblue;
+			box-shadow: inset;
+			width: 64%;
+			height: 60vh;
+			visibility: hidden;
+			top: 14%;
+			bottom: auto;
+			margin-left: 14%;
+			margin-right: 14%;
+			z-index: +1;
+			overflow-y: visible;
+			scroll-behavior: smooth;
+			scroll-padding: 3px;
+			overflow: scroll;
+			overflow-x: hidden;
+			animation: fadin 4s;
+			z-index: 2;
+		}
+		.abt{
+			background-attachment: fixed;
+			text-align: justify;
+			position: absolute;
+			color: rgb(0, 0, 0);
+			background-color: rgb(240, 248, 255);
+			padding: 50px;
+			border-radius: 15px;
+			border: 4px solid aliceblue;
+			box-shadow: inset;
+			width: 50vw;
+			height: 40vh;
+			visibility: hidden;
+			top: 20%;
+			margin-left: 20%;
+			z-index: +1;
+			overflow-y: visible;
+			scroll-behavior: smooth;
+			scroll-padding: 3px;
+			overflow: scroll;
+			overflow-x: hidden;
+			animation: fadin 4s;
+			z-index: 2;
+		}
+
+		#cancel{
+			transition: 0S;
+		}
+		::-webkit-scrollbar{
+		    width: 5px;
+			height: 10px;
+		    background-color:transparent;
+			right: 3%; 
+		  }
+		  ::-webkit-scrollbar-thumb{
+			width: 4px;
+			height: 8px;
+			border-radius: 3px;
+			background: rgba(0, 0,0, 0.5);
+		  }
+		  @keyframes fadin {
+		  0%{
+			opacity:0;
+
+		  }
+		  100%{
+			opacity: 1;
+		  }
+		  }
+		  footer{
+		    background-color: rgba(255, 255, 255, 1);
+		    text-align: center;
+		    position: fixed;
+			font-weight: bolder;
+		    margin-top: 4%;
+		    padding: 3px;
+		    width: 100%;
+			height: 68px;
+		    bottom:0;
+		    left: 0;
+		    color: rgb(0, 0, 0);
+		}
+	</style>
+</head>
+<body>
+	<div class="dp">
+		<img src="dp.png" alt="'Profile Picture" class="pp" width="200px" height="200px">
+	</div>
+	<div class="part1">
+		<h6 class="hello">Hello,I'm</h1>
+		<h1 class="name">Kaveesha Ranmini Narasinha</h1>
+		<p class="lilintro">Student(Undergraduate in Business Management)</p>
+		<div class="listone">
+			<button onclick="" class="button" id="active">HOME</button>
+			<button onclick="abot();" class="button">ABOUT</button>
+			<button onclick="edu();" class="button">EDUCATION</button>
+		</div>
+	</div>
+	<div id="abt" class="abt">
+		<div class="dpabt">
+			<img src="dp.png" alt="dp" width="150px" height="150px">
+		</div>
+		<h3>ABOUT</h3>
+		<p>Hi, I'm <strong>Kaveesha Ranmini Narasinha</strong>, a passionate Business Management student at SLTC Research University blending <strong>Leadership, Problem-solving, Time management, and critical thinking</strong> expertise. With a rich background in PR & Sales, I prioritize <strong>courage, respect, integrity</strong>, and delivering impactful projects. Explore my portfolio for innovative solutions and let's create together.</p>
+		<h3>SKILLS</h3>
+		<ul type="disc">
+			<li>Leadership</li>
+			<li>Crowd Controling</li>
+			<li>Critical thinking</li>
+			<li>Hadeling Situation</li>
+			<li>Patience</li>
+		</ul>
+		<button onclick="closet();" class="buttonc" id="cancel">CLOSE</button>
+	</div>
+	<div id="edul" class="edul">
+		<h1 class="edu">SLTC Research University - Sri Lanka [2023- Present]</h1>
+		<h3>No Records- Waiting for the future</h3>
+		<h1 class="edu">Sujatha Vidyalaya Mathara - Sri Lanka [2008-2020]</h1>
+		<h3 class="level">GCE Advance Level - Commerce stream</h3><div class="codei">5683971 <button class="copyb" onclick="indexal();">COPY</button></div>
+		<table class="aresult">
+			<tr><th>Economics</th><th>S</th></tr>
+			<tr><th>Accounting</th><th>C</th></tr>
+			<tr><th>Business Studies</th><th>S</th></tr>
+		</table><br>
+		<h3 class="level">GCE Ordinary Level</h3><div class="codei">61031178 <button class="copyb" onclick="indexol();">COPY</button></div>
+		<table class="aresult">
+			<tr><th>Science</th><th>S</th></tr>
+			<tr><th>Mathematics</th><th>S</th></tr>
+			<tr><th>Infomation & Communication Technology</th><th>S</th></tr>
+			<tr><th>Language & Literature - Sinhala</th><th>S</th></tr>
+			<tr><th>English Lanuage</th><th>S</th></tr>
+			<tr><th>Buddhism</th><th>C</th></tr>
+			<tr><th>History</th><th>S</th></tr>
+			<tr><th>Geography</th><th>S</th></tr>
+			<tr><th>Dancing</th><th>C</th></tr>
+		</table>
+		<button onclick="closet();" class="buttonc" id="cancel">CLOSE</button>
+	</div>
+	<div class="box" id="box"></div>
+	<script>
+		var edub=document.getElementById("edul");
+		var abtb=document.getElementById("abt");
+		var boxb=document.getElementById("box");
+		function edu() {
+		    edub.style.visibility="visible";
+		    boxb.style.visibility="visible";
+		}
+		function abot(){
+		    abtb.style.visibility="visible";
+		    boxb.style.visibility="visible";
+		}
+		function closet() {
+		    edub.style.visibility="hidden";
+		    boxb.style.visibility="hidden";
+		    location.reload()
+		}
+		function copy() {
+		    navigator.clipboard.writeText("rGAVFJxhQE")
+		}
+		function copyw() {
+		    navigator.clipboard.writeText("512NESU3Ve")
+		}
+		function indexol() {
+		    navigator.clipboard.writeText("91813425")
+		}
+		function indexal() {
+		    navigator.clipboard.writeText("2883333")
+		}
+	</script>
+</body>
+<footer><p>CONTACT ON<br><a href="https://www.linkedin.com/in/kaveesha-narasinha-6684402ab" target="_blank"><img src="logo.png" width="100px" height="30px"></a></p></footer>
+</html>
